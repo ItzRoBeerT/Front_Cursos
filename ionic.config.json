@@ -1,0 +1,7 @@
+{
+  "name": "Front_Cursos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
