@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
   constructor(
     private alertController: AlertController,
     private router: Router,
-    private htppService: HttpService
+    private htppService: HttpService,
+    private storage: StorageService
   ) {}
 
   ngOnInit() {
@@ -56,8 +58,10 @@ export class LoginPage implements OnInit {
             if(data.token == null){
               texto = 'El correo o la contraseña son incorrectos';
               this.presentAlert(texto)
-            }else
-            this.router.navigate(['/inicio']);
+            }else{
+              this.storage.setToken(data.token);
+              this.router.navigate(['/inicio']);
+            }
         });
     }
   }
