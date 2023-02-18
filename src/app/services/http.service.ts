@@ -19,6 +19,10 @@ export class HttpService {
     return this.http.post<Usuario>('http://127.0.0.1:3000/crearUsuario',{nombre:nombre, email:email, password:password});
   }
 
+  logoutUsuario(): Observable<TokenUsuario>{
+    return this.http.get<TokenUsuario>('http://127.0.0.1:3000/usuario/logout');
+  }
+
   getAllCursos(): Observable<Curso[]>{
     return this.http.get<Curso[]>('http://127.0.0.1:3000/cursos');
   }

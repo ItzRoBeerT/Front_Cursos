@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -19,10 +19,13 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private router: Router,
     private htppService: HttpService,
-    private storage: StorageService
+    private storage: StorageService,
+    private menuCtrl: MenuController
   ) {}
 
   ngOnInit() {
+
+    this.menuCtrl.enable(false);
     this.validar();
     this.myForm = new FormGroup({
       email: this.email,
