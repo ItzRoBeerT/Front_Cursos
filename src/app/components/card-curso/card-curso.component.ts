@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'card-curso',
@@ -6,11 +7,38 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-curso.component.scss'],
 })
 export class CardCursoComponent implements OnInit {
-
   @Input() curso!: Curso;
-  
-  constructor() { }
+  handlerMessage = '';
+  roleMessage = '';
+
+  constructor(private alertController: AlertController) {}
 
   ngOnInit() {}
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Estas seguro?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            this.handlerMessage = 'Alert canceled';
+          },
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {
+            this.handlerMessage = 'Alert confirmed';
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    this.roleMessage = `Dismissed with role: ${role}`;
+  }
 }
