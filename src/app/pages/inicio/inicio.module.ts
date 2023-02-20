@@ -8,13 +8,16 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
 
+
+
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    InicioPageRoutingModule
-  ],
-  declarations: [InicioPage]
+    declarations: [InicioPage],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        InicioPageRoutingModule,
+
+    ]
 })
 export class InicioPageModule {}

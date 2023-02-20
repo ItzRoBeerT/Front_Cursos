@@ -19,13 +19,10 @@ export class LoginPage implements OnInit {
     private alertController: AlertController,
     private router: Router,
     private htppService: HttpService,
-    private storage: StorageService,
-    private menuCtrl: MenuController
+    private storage: StorageService
   ) {}
 
   ngOnInit() {
-
-    this.menuCtrl.enable(false);
     this.validar();
     this.myForm = new FormGroup({
       email: this.email,
@@ -63,7 +60,7 @@ export class LoginPage implements OnInit {
               this.presentAlert(texto)
             }else{
               this.storage.setToken(data.token);
-              this.router.navigate(['/inicio']);
+              this.router.navigate(['/tabs']);
             }
         });
     }

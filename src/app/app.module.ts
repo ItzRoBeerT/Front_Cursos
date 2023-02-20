@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CardCursoComponent } from './components/card-curso/card-curso.component';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],

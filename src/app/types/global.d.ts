@@ -7,7 +7,7 @@ declare global{
         _id: string;
         nombre: string;
         horas: number;
-        idUsuario: string;
+        nombreUsuario: string;
     }
 
     type Usuario = {
