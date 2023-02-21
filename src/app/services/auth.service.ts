@@ -9,7 +9,6 @@ export class AuthService {
   constructor(private storage: StorageService) { }
 
   logout(){
-
     this.storage.removeToken();
   }
 }

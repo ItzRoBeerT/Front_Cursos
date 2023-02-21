@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'card-curso',
@@ -11,7 +12,7 @@ export class CardCursoComponent implements OnInit {;
   handlerMessage = '';
   roleMessage = '';
 
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private httpServ: HttpService) {}
 
   ngOnInit() {}
 
@@ -31,6 +32,11 @@ export class CardCursoComponent implements OnInit {;
           role: 'confirm',
           handler: () => {
             this.handlerMessage = 'Alert confirmed';
+            this.httpServ.comprar(this.curso._id).subscribe(
+              (data: Compra) => {
+                console.log(data);
+              }
+            );
           },
         },
       ],

@@ -27,6 +27,14 @@ export class HttpService {
     return this.http.get<Curso[]>('http://127.0.0.1:3000/cursos');
   }
 
+  comprar(idCurso:string): Observable<Compra>{
+    return this.http.post<Compra>('http://127.0.0.1:3000/comprar', {cursoId:idCurso});
+  }
+
+  comprasUsuario(): Observable<Curso[]>{
+    return this.http.get<Curso[]>('http://127.0.0.1:3000/comprasUsuario');
+  }
+
   getCursoDemas(): Observable<Curso[]>{
     return this.http.get<Curso[]>('http://127.0.0.1:3000/cursosDeLosDemas');
   }

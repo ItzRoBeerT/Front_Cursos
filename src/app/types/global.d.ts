@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export {};
 
 declare global{
@@ -15,6 +17,11 @@ declare global{
         nombre: string;
         email: string;
         password: string;
+    }
+    type Compra ={
+        _id: string;
+        idCurso: string;
+        idUsuario: string;
     }
 
     type TokenUsuario = {

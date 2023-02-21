@@ -18,9 +18,7 @@ export class InicioPage implements OnInit {
   }
 
   ionViewDidEnter(){
-   
-    this.httpService.getAllCursos().subscribe((data: Curso[]) => {
-      console.log(data);
+    this.httpService.comprasUsuario().subscribe((data: Curso[]) => {
       this.cursos = data;
     }); 
   }

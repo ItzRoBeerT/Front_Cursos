@@ -16,8 +16,9 @@ export class BuscarPage implements OnInit {
 
   ionViewDidEnter(){
     this.httpService.getCursoDemas().subscribe((data: Curso[]) => {
-      console.log(data);
+  
       this.cursos = data;
+      console.log(this.cursos[0]._id);
     }); 
   }
 

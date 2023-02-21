@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { InicioPageRoutingModule } from './inicio-routing.module';
 
 import { InicioPage } from './inicio.page';
-
-
+import { CardCursoComponent } from 'src/app/components/card-curso/card-curso.component';
+import { SharedModule } from 'src/app/services/sharedModules';
 
 @NgModule({
     declarations: [InicioPage],
@@ -16,8 +16,8 @@ import { InicioPage } from './inicio.page';
         CommonModule,
         FormsModule,
         IonicModule,
-        InicioPageRoutingModule,
-
+        SharedModule,
+        InicioPageRoutingModule
     ]
 })
 export class InicioPageModule {}
