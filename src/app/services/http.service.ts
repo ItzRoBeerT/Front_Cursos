@@ -26,4 +26,8 @@ export class HttpService {
   getAllCursos(): Observable<Curso[]>{
     return this.http.get<Curso[]>('http://127.0.0.1:3000/cursos');
   }
+
+  getCursoDemas(): Observable<Curso[]>{
+    return this.http.get<Curso[]>('http://127.0.0.1:3000/cursosDeLosDemas');
+  }
 }

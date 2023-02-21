@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -6,7 +6,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './card-curso.component.html',
   styleUrls: ['./card-curso.component.scss'],
 })
-export class CardCursoComponent implements OnInit {
+export class CardCursoComponent implements OnInit {;
   @Input() curso!: Curso;
   handlerMessage = '';
   roleMessage = '';
